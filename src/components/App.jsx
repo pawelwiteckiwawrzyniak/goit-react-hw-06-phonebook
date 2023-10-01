@@ -12,7 +12,9 @@ export const App = () => {
     const ls = localStorage.getItem('contacts');
     const lsParse = JSON.parse(ls);
 
-    return () => setContacts(lsParse);
+    if (lsParse.length !== 0) {
+      setContacts(lsParse);
+    }
   }, []);
 
   useEffect(() => {
